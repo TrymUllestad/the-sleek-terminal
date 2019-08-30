@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Inconsolata-g:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -83,29 +83,28 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.85;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#141414", // Background, black
+	"#cc2818", // Red
+	"#989818", // Green
+	"#d89820", // Yellow
+	"#487888", // Blue
+	"#b06088", // Magenta
+	"#68a068", // Cyan
+	"#c0c0c0", // Light gray
+  	/* 8 bright colors */
+	"#908070", // Dark gray
+	"#f84838", // Red
+	"#b8b828", // Green
+	"#f8b830", // Yellow
+	"#80a898", // Blue
+	"#d08898", // Magenta
+	"#90c078", // Cyan
+	"#e8d8b0", // White
 
 	[255] = 0,
 
@@ -115,13 +114,30 @@ static const char *colorname[] = {
 	"black",
 };
 
+/*	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
+
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white", 	*/
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 258;
+unsigned int defaultbg = 0;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
@@ -144,7 +160,6 @@ static unsigned int rows = 24;
 /*
  * Default shape of the mouse cursor
  */
-
 static char* mouseshape = "xterm";
 
 /*
@@ -176,14 +191,15 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+	{ MODKEY,		XK_c,           clipcopy,       {.i =  0} },
+	{ MODKEY,		XK_v,           clippaste,      {.i =  0} },
+	{ TERMMOD,		XK_V,		selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_Return,	newterm,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_Return,	newterm,	{.i =  0} },
+	{ MODKEY,		XK_k,		kscrollup,	{.i =  1} }, // .i =  1 scroll line
+	{ MODKEY,		XK_j,		kscrolldown,	{.i =  1} }, // .i = -1 scroll page
+	{ MODKEY,		XK_Up,		kscrollup,	{.i =  1} },
+	{ MODKEY,		XK_Down,	kscrolldown,	{.i =  1} },
 };
 
 /*
