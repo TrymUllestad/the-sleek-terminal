@@ -1,4 +1,5 @@
 st
 *.diff
+*.o
 histpatches
 /lfc/
