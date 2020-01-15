@@ -1,3 +1,17 @@
+st - simple terminal, slightly modified
+=======================================
+The simple terminal, [st](https://st.suckless.org/), is another [suckless](https://suckless.org/) creation meant to deliver a terminal emulator with as little bloat as possible.
+
+Key bindings
+------------
+st, like most software from suckless, is driven from the keyboard. Things like scrollbars are not deemed useful enough to be implemented since you can just as easily scroll using the keyboard. 
+* `Alt+K/J` or `Alt+Up/Down` scrolls up/down; pressing `Ctrl+Shift` instead of `Alt` (ex. `Ctrl+Shift+K`) jumps 25 lines instead of just 1
+* `Alt+C/V` is bound to copy/paste
+* `Ctrl+Shift+Enter` opens a new terminal in your current directory
+* `Ctrl+Shift+L/H`, `Ctrl+Shift+Right/Left` or `Ctrl+Shift+PageUp/PageDown` to increse/decrease font size; `Ctrl+Shift+0` or `Ctrl+Shift+Home` resets to default
+
+Original README
+===============
 st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.

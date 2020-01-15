@@ -188,18 +188,27 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} }, // .f = +1 decreses
+	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} }, // .f = -1 increases
+	{ TERMMOD,              XK_H,           zoom,           {.f = -1} },
+	{ TERMMOD,              XK_L,           zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Left,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Right,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ MODKEY,		XK_c,           clipcopy,       {.i =  0} },
-	{ MODKEY,		XK_v,           clippaste,      {.i =  0} },
-	{ TERMMOD,		XK_V,		selpaste,       {.i =  0} },
+	{ TERMMOD,              XK_equal,       zoomreset,      {.f =  0} },
+	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
+	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
+	{ TERMMOD,              XK_V,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_Return,	newterm,	{.i =  0} },
-	{ MODKEY,		XK_k,		kscrollup,	{.i =  1} }, // .i =  1 scroll line
-	{ MODKEY,		XK_j,		kscrolldown,	{.i =  1} }, // .i = -1 scroll page
-	{ MODKEY,		XK_Up,		kscrollup,	{.i =  1} },
-	{ MODKEY,		XK_Down,	kscrolldown,	{.i =  1} },
+	{ TERMMOD,              XK_Return,      newterm,        {.i =  0} },
+	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} }, // .i =  1 scroll line
+	{ MODKEY,               XK_j,           kscrolldown,	{.i =  1} }, // .i = -1 scroll page
+	{ TERMMOD,              XK_K,           kscrollup,      {.i = 25} }, // .i =  1 scroll line
+	{ TERMMOD,              XK_J,           kscrolldown,	{.i = 25} }, // .i = -1 scroll page
+	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_Down,        kscrolldown,	{.i =  1} },
+	{ TERMMOD,              XK_Up,          kscrollup,      {.i = 25} },
+	{ TERMMOD,              XK_Down,        kscrolldown,	{.i = 25} },
 };
 
 /*

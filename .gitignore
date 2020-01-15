@@ -1,4 +1,6 @@
 st
 *.diff
+*.o
+config.h
 histpatches
 /lfc/

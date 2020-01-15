@@ -142,22 +142,34 @@ Print the full screen to the
 Print the selection to the
 .I iofile.
 .TP
-.B Ctrl-Shift-Page Up
+.B Alt-[Up/K]
+Scroll up in the terminal.
+.TP
+.B Alt-[Down/J]
+Scroll down in the terminal.
+.TP
+.B Ctrl-Shift-[Up/K]
+Scroll 25 lines up.
+.TP
+.B Ctrl-Shift-[Down/J]
+Scroll 25 lines down.
+.TP
+.B Ctrl-Shift-[Page Up/Right/L]
 Increase font size.
 .TP
-.B Ctrl-Shift-Page Down
+.B Ctrl-Shift-[Page Down/Left/H]
 Decrease font size.
 .TP
-.B Ctrl-Shift-Home
+.B Ctrl-Shift-[Home/0]
 Reset to default font size.
 .TP
-.B Ctrl-Shift-y
+.B Ctrl-Shift-V
 Paste from primary selection (middle mouse button).
 .TP
-.B Ctrl-Shift-c
+.B Alt-C
 Copy the selected text to the clipboard selection.
 .TP
-.B Ctrl-Shift-v
+.B Alt-V
 Paste from the clipboard selection.
 .SH CUSTOMIZATION
 .B st
