@@ -1,6 +1,9 @@
 st
 *.diff
 *.o
+<<<<<<< HEAD
 config.h
+=======
+>>>>>>> 6711a411eba8160099f04264bfbc73457098087f
 histpatches
 /lfc/
